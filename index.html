@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>INTERNET DE LAS COSAS</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #eafaff;
+    background: #020914;
+    background-image:
+        linear-gradient(#00c8ff12 1px, transparent 1px),
+        linear-gradient(90deg, #00c8ff12 1px, transparent 1px);
+    background-size: 35px 35px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    border-bottom: 1px solid #087ca5;
+    background: #041321eF;
+}
+
+.logo {
+    color: #00e5ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#counter {
+    color: #91b7ce;
+}
+
+main {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 6%;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    max-width: 1000px;
+    animation: appear .5s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tag {
+    color: #00e5ff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #00e5ff;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+h3 {
+    color: #00e5ff;
+}
+
+p, li {
+    color: #c4d9e8;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.neon {
+    color: #00e5ff;
+    text-shadow: 0 0 20px #00bfff80;
+}
+
+.panel {
+    background: linear-gradient(135deg, #09243a, #041321);
+    border: 1px solid #087ca5;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 0 25px #00bfff12;
+    margin-top: 22px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.big-icon {
+    font-size: 110px;
+    text-align: center;
+    color: #00e5ff;
+    text-shadow: 0 0 35px #00c8ff80;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: brightness(.8); }
+    to { filter: brightness(1.5); }
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #00dfff;
+    border-radius: 9px;
+    padding: 12px 20px;
+    color: white;
+    background: #07304a;
+    font-size: 15px;
+    transition: .2s;
+}
+
+button:hover {
+    background: #006c98;
+    box-shadow: 0 0 18px #00cfff55;
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: linear-gradient(100deg, #008dcc, #0759d9);
+    padding: 15px 25px;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.progress {
+    height: 4px;
+    background: #10283b;
+}
+
+#bar {
+    width: 25%;
+    height: 100%;
+    background: #00e5ff;
+    box-shadow: 0 0 10px #00e5ff;
+    transition: width .3s;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #62869e;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    main {
+        padding: 25px 18px;
+    }
+
+    .big-icon {
+        font-size: 75px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">◈ ELECTRO-Lu</div>
+    <div id="counter">01 / 04</div>
+</header>
+
+<div class="progress">
+    <div id="bar"></div>
+</div>
+
+<main>
+
+    <!-- DIAPOSITIVA 1 -->
+    <section class="slide active">
+        <div class="tag">569/2026</div>
+
+        <div class="grid">
+            <div>
+                <h1><span class="neon">INTERNET DE LAS COSAS</span></h1>
+
+                <p>
+                    Resistencias, protoboard led, sensor de luz,fotorresitecia.
+                    Cómo funciona y como hacerlo.
+                </p>
+
+                <button class="primary" onclick="goTo(1)">
+                    INICIAR PRESENTACIÓN →
+                </button>
+            </div>
+
+            <div class="big-icon"><img src="imagenes/w.jpeg" alt="circuito"></div>
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 2 -->
+    <section class="slide">
+        <div class="tag">01</div>
+
+        <h2>¿Qué es una fotorresitecia?</h2><img src="imagenes/e.jpg" alt="Una fotorresitecia"><img src="imagenes/66.jpg" alt="Una fotorresitecia 2">
+
+        <p>
+            Una fotoresistencia, también conocida como LDR (Light Dependent Resistor), es un componente electrónico cuya resistencia eléctrica cambia dependiendo de la cantidad de luz que recibe. Cuando hay mucha luz, su resistencia disminuye y permite que pase una mayor cantidad de corriente eléctrica, mientras que cuando hay poca luz, su resistencia aumenta y deja pasar menos corriente
+        </p>
+
+        <div class="grid">
+            <div class="panel">
+                <h3>¿Dónde se utiliza?</h3>
+                <p>
+                    Las fotoresistencias se utilizan principalmente para detectar la intensidad de la luz y pueden encontrarse en sistemas de iluminación automática, lámparas que se encienden al oscurecer, sensores de luz y proyectos electrónicos
+                </p>
+            </div>
+            <img src="imagenes/77.jpg" alt="Una fotorresitecia 3">
+            <img src="imagenes/99.jpg" alt="Una fotorresitecia 4">
+            <div class="panel">
+                <h3>¿cómo funciona?</h3>
+                <p>
+                   Es un componente electrónico que cambia su resistencia eléctrica dependiendo de la cantidad de luz que recibe. Cuando hay mucha luz, su resistencia disminuye, y cuando hay poca luz, su resistencia aumenta
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 3 -->
+    <section class="slide">
+        <div class="tag">02</div>
+
+        <h2>Las resistencias</h2>
+
+        <div class="big-icon"><img src="imagenes/00.jpg" alt="una resistencia"></div>
+
+        <div class="panel">
+            <h3>¿Para qué sirven?</h3>
+
+            <p>
+                Una resistencia se opone al paso de la corriente eléctrica.
+                Ayuda a limitarla y a proteger componentes como los LED.
+            </p>
+
+            <p>
+                <b class="neon">Unidad de medida:</b> ohmio (Ω).
+            </p>
+        </div>
+        <img src="imagenes/999.jpg" alt="Una resistencia 2">
+        	<div><b class="neon"><p>hay muchos tipos de resistencias con distindos valores y usos dependiendo el color de las lineas </p></b>
+        	</div>
+    </section>
+
+    <!-- DIAPOSITIVA 4 -->
+    <section class="slide">
+        <div class="tag">03</div>
+
+        <h2>La protoboard</h2>
+
+        <div class="big-icon"><img src="imagenes/zz.jpg" alt="una protoboard"></div>
+
+        <div class="panel">
+            <h3>¿Qué es?</h3>
+
+            <p>
+                Es una placa con orificios y contactos metálicos internos
+                que permiten conectar componentes sin necesidad de soldar.
+            </p>
+            <img src="imagenes/eee.jpg" alt="una protoboard 2">
+
+            <p>
+                <b class="neon">Ventaja:</b> podemos probar y modificar
+                circuitos fácilmente mediante filas y columnas de orificios conectados eléctricamente, facilitando la creación y prueba de circuitos.
+            </p>
+        </div>
+    </section>
+        <!-- DIAPOSITIVA 5 -->
+    <section class="slide">
+        <div class="tag">04</div>
+
+        <h2>LED</h2>
+
+        <div class="big-icon"><img src="imagenes/45.jpg" alt="led">
+		</div>
+
+        <div class="panel">
+            <h3>¿Qué es?</h3>
+
+            <p>
+                <b class="neon">Un led prácticamente es un diodo semiconductor, que cuando se le aplica de 1.5 volts de corriente directa es capaz de emitir una radiación electromagnética que normalmente la conocemos como luz. Estos componen entes únicamente cuenta con dos terminales una para el voltaje y la otra para la tierra, cabe mencionar que estas terminales son bastante sencillas de reconocer ya que una es mas larga que la otra No, un LED no es un conductor en el sentido tradicional. Es un dispositivo semiconductor que permite el paso de corriente en una sola dirección y emite luz al recibir energía</b>
+            </p>
+            <img src="imagenes/l.jpg" alt="led 2"> <img src="imagenes/dios.jpg" alt="led 4"><br>
+            <img src="imagenes/red.jpg" alt="led 3">
+        </div>
+    </section>
+        <!-- DIAPOSITIVA 6 -->
+    <section class="slide">
+        <div class="tag">05</div>
+
+        <h2>JUMPERS</h2>
+
+        <div class="big-icon"><img src="imagenes/uu.jpg" alt="jumpers"></div>
+
+        <div class="panel">
+            <h3>¿Qué son?</h3>
+
+            <p>
+			<b class="neon">Los jumpers son pequeños conectores o puentes que permiten abrir o cerrar circuitos eléctricos para configurar manualmente dispositivos de hardware.
+			Definición y Funcionamiento
+			Un jumper es un componente pequeño, generalmente de plástico con un contacto metálico en su interior, que se coloca sobre dos pines adyacentes en una placa de circuito impreso para cerrar o abrir un circuito eléctrico de manera				 temporal o semipermanente</b>
+            </p>  
+			<img src="imagenes/44.jpg" alt="jumpers 2">
+            <p>
+                <b class="neon">Ventaja:ofrecen una serie de ventajas que los hacen una opción popular en la moda y el deporte. Aquí hay algunas de sus principales ventajas:
+Versatilidad: Los jumpers son ideales para combinar con diferentes estilos y ocasiones, desde eventos informales hasta looks más sofisticados. 
+1
+Calidez y comodidad: Confeccionados en telas ligeras y cómodas, los jumpers son perfectos para climas cálidos y proporcionan un buen nivel de abrigo. 
+1
+Estilo y personalización: Los jumpers permiten una gran cantidad de personalización y estilo, adaptándose a diferentes gustos y preferencias. 
+1
+Comodidad: Su diseño holgado y su confección en telas ligeras los hacen cómodos para el uso diario.</b>
+            </p>
+        </div>
+
+        <button onclick="alert('HERNANDEZ HERNANDEZ LUIS ANTONIo, ALISON NAHOMI BAÑOS MORAN,ANGEL YUBAL GUTIERREZ ALVAREZ y López Lezama Rebeca Miroslava')">
+            DE SUS SEVIDORES
+        </button>
+    </section>
+
+</main>
+
+<div class="navigation">
+    <button id="prev" onclick="changeSlide(-1)">← Anterior</button>
+    <span class="neon">ELECTRO-LAB</span>
+    <button id="next" onclick="changeSlide(1)">Siguiente →</button>
+</div>
+
+<footer>
+     NUESTRA PRESENTACIÓN    569
+</footer>
+
+<script>
+let current = 0;
+
+const slides = document.querySelectorAll(".slide");
+const counter = document.getElementById("counter");
+const bar = document.getElementById("bar");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
+function showSlide(index) {
+    current = Math.max(0, Math.min(index, slides.length - 1));
+
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === current);
+    });
+
+    counter.textContent =
+        String(current + 1).padStart(2, "0") +
+        " / " +
+        String(slides.length).padStart(2, "0");
+
+    bar.style.width =
+        ((current + 1) / slides.length * 100) + "%";
+
+    prev.disabled = current === 0;
+    next.disabled = current === slides.length - 1;
+}
+
+function changeSlide(direction) {
+    showSlide(current + direction);
+}
+
+function goTo(index) {
+    showSlide(index);
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") changeSlide(1);
+    if (event.key === "ArrowLeft") changeSlide(-1);
+});
+
+showSlide(0);
+</script>
+<body bgcolor="#30FCDE">
+
+</body>
+</html>
